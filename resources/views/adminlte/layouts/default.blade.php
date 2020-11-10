@@ -18,6 +18,7 @@
 	@yield('body')
 	<!-- /.login-box -->
 
+	@include('script')
 	<script src="{{ mix('dist/js/adminlte.js') }}"></script>
 </body>
 

@@ -20,6 +20,7 @@ mix
 
 mix
     .js('resources/js/adminlte.js', 'public/dist/js')
+    .js('resources/js/turbolinks.js', 'public/dist/js')
     .js('node_modules/popper.js/dist/popper.js', 'public/dist/js')
 
 
@@ -29,15 +30,15 @@ if (mix.inProduction()) {
 }
 mix.options({
     content: [
-        "app/**/*.php",
-        "resources/**/*.html",
-        "resources/**/*.js",
-        "resources/**/*.jsx",
-        "resources/**/*.ts",
-        "resources/**/*.tsx",
-        "resources/**/*.php",
-        "resources/**/*.vue",
-        "resources/**/*.twig",
+        path.resolve(__dirname, "app/**/*.php"),
+        path.resolve(__dirname, "resources/**/*.html"),
+        path.resolve(__dirname, "resources/**/*.js"),
+        path.resolve(__dirname, "resources/**/*.jsx"),
+        path.resolve(__dirname, "resources/**/*.ts"),
+        path.resolve(__dirname, "resources/**/*.tsx"),
+        path.resolve(__dirname, "resources/**/*.php"),
+        path.resolve(__dirname, "resources/**/*.vue"),
+        path.resolve(__dirname, "resources/**/*.twig"),
     ],
     defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
     whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
