@@ -1,0 +1,5 @@
+require('./bootstrap')
+require('../adminlte/plugins/bootstrap/js/bootstrap.bundle')
+require('../adminlte/plugins/datatables/jquery.dataTables')
+require('../adminlte/dist/js/adminlte')
+require('../adminlte/dist/js/demo')
