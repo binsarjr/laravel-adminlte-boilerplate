@@ -28,6 +28,7 @@ mix.sourceMaps(false)
 if (mix.inProduction()) {
     mix.version()
 }
+mix.sourceMaps(false)
 mix.options({
     content: [
         path.resolve(__dirname, "app/**/*.php"),

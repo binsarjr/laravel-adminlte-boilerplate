@@ -13,13 +13,17 @@
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 	<link rel="stylesheet" href="{{ mix('dist/css/adminlte.css') }}">
+
+
+	<meta name="turbolinks-cache-control" content="no-cache">
+	<script src="{{ mix('dist/js/turbolinks.js') }}" data-turbolinks-track="reload"></script>
+	<script src="{{ mix('dist/js/adminlte.js') }}" data-turbolinks-track="reload" defer></script>
 </head>
 <body class="hold-transition @yield('body-class','login-page')">
 	@yield('body')
 	<!-- /.login-box -->
-
+	
 	@include('script')
-	<script src="{{ mix('dist/js/adminlte.js') }}"></script>
 </body>
 
 </html>
