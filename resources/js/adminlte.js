@@ -1,20 +1,20 @@
-require('./bootstrap')
-require('../adminlte/plugins/bootstrap/js/bootstrap.bundle')
-require('../adminlte/plugins/datatables/jquery.dataTables')
-require('../adminlte/dist/js/adminlte')
+import './bootstrap'
+import '../adminlte/plugins/bootstrap/js/bootstrap.bundle'
+import '../adminlte/plugins/datatables/jquery.dataTables'
+import '../adminlte/dist/js/adminlte'
 
 
-const adminlteDemo = require('../adminlte/dist/js/demo')
-adminlteDemo.load()
+import { load, unload } from '../adminlte/dist/js/demo'
+load()
 
 document.addEventListener('turbolinks:before-render', () => {
-    adminlteDemo.unload()
+    unload()
 });
 
 document.addEventListener(
     'turbolinks:load load',
     () => {
-        adminlteDemo.load()
+        load()
     }, {
         once: true,
     },
@@ -22,5 +22,5 @@ document.addEventListener(
 
 // Called after every non-initial page load
 document.addEventListener('turbolinks:render', () => {
-    adminlteDemo.load()
+    load()
 });
