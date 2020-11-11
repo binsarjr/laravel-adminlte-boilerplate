@@ -225,7 +225,7 @@ const load = () => {
 
 
     $container.append(
-        '<h5>Customize AdminLTE</h5><hr class="mb-2"/>'
+        '<h5>Customize Theme</h5><hr class="mb-2"/>'
     )
 
     let $no_border_checkbox = $('<input />', {

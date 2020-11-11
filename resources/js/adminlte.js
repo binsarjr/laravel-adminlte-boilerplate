@@ -5,11 +5,14 @@ import '../adminlte/dist/js/adminlte'
 
 
 import adminlte from '../adminlte/dist/js/demo'
-adminlte.load()
+try {
+    adminlte.load()
 
+    // Called once after the initial page has loaded
+    document.addEventListener('turbolinks:load load', adminlte.load, { once: true })
 
-// Called once after the initial page has loaded
-document.addEventListener('turbolinks:load load', adminlte.load, { once: true })
-
-// Called after every non-initial page load
-document.addEventListener('turbolinks:render', adminlte.load)
+    // Called after every non-initial page load
+    document.addEventListener('turbolinks:render', adminlte.load)
+} catch (error) {
+    console.error(error)
+}
