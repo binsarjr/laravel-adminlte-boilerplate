@@ -4,23 +4,11 @@ import '../adminlte/plugins/datatables/jquery.dataTables'
 import '../adminlte/dist/js/adminlte'
 
 
-import { load, unload } from '../adminlte/dist/js/demo'
-load()
+import adminlte from '../adminlte/dist/js/demo'
 
-document.addEventListener('turbolinks:before-render', () => {
-    unload()
-});
 
-document.addEventListener(
-    'turbolinks:load load',
-    () => {
-        load()
-    }, {
-        once: true,
-    },
-);
+// Called once after the initial page has loaded
+$(window).on('turbolinks:load load', adminlte.load)
 
 // Called after every non-initial page load
-document.addEventListener('turbolinks:render', () => {
-    load()
-});
+document.addEventListener('turbolinks:render', adminlte.load)
