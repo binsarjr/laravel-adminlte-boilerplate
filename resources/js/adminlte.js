@@ -5,10 +5,11 @@ import '../adminlte/dist/js/adminlte'
 
 
 import adminlte from '../adminlte/dist/js/demo'
+adminlte.load()
 
 
 // Called once after the initial page has loaded
-$(window).on('turbolinks:load load', adminlte.load)
+document.addEventListener('turbolinks:load load', adminlte.load, { once: true })
 
 // Called after every non-initial page load
 document.addEventListener('turbolinks:render', adminlte.load)
